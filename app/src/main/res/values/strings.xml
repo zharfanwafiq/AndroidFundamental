@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AndroidFundamental</string>
+    <string name="tvLength">Panjang</string>
+    <string name="tvWidth">Lebar</string>
+    <string name="tvHeight">Tinggi</string>
+    <string name="tvResult">Hasil</string>
+    <string name="actionResult">Hitung</string>
+
+    <!--intent-->
+    <string name="actionMoveToActivity">Pindah</string>
+    <string name="actionMoveToActivityWithData">Pindah Dengan data</string>
+    <string name="actionDialNumber">Dial Number</string>
+    <string name="moveText">Telah Pindah</string>
 </resources>
