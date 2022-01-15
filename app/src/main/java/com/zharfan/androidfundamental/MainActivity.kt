@@ -1,106 +1,69 @@
 package com.zharfan.androidfundamental
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import com.zharfan.androidfundamental.data.Person
 import com.zharfan.androidfundamental.databinding.ActivityMainBinding
+
+import com.zharfan.androidfundamental.intent.MoveActivity
+import com.zharfan.androidfundamental.intent.MoveActivityWithData
+import com.zharfan.androidfundamental.intent.MoveWithObjectActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    companion object {
-        private const val TAG = "MainActivity"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.i(TAG, "onCreate: ")
+        setExplicitIntent()
+        setMoveActivityWithData()
+        setMoveActivityWithObject()
 
-
-
-        if (savedInstanceState != null) {
-            binding.apply {
-                val volume = savedInstanceState.getString(TAG)
-                tvResult.text = volume
-            }
-        }
-
-        result()
     }
 
-    private fun result() {
+
+
+    private fun setExplicitIntent() {
         binding.apply {
-            btnResult.setOnClickListener {
+            btnMoveActivity.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MoveActivity::class.java))
+            }
 
-                var isEmptyField = false
-
-                val length = etLength.text.toString().trim()
-                val width = etWidth.text.toString().trim()
-                val height = etHeight.text.toString().trim()
-
-                if (length.isEmpty()) {
-                    isEmptyField = true
-                    etLength.error = "Field ini tidak boleh kosong"
+        }
+    }
+    private fun setMoveActivityWithData() {
+        binding.apply {
+            btnMoveToActivityWithData.setOnClickListener {
+                val intent = Intent(this@MainActivity, MoveActivityWithData::class.java).apply {
+                    putExtra(MoveActivityWithData.EXTRA_TITLE,"MoveWithData")
+                    putExtra(MoveActivityWithData.EXTRA_AGE,18)
+                    putExtra(MoveActivityWithData.EXTRA_NAME,"Asep")
                 }
-
-                if (width.isEmpty()) {
-                    isEmptyField = true
-                    etWidth.error = "Field ini tidak boleh kosong"
-                }
-
-                if (height.isEmpty()) {
-                    isEmptyField = true
-                    etHeight.error = "Field ini tidak boleh kosong"
-                }
-
-                if (!isEmptyField) {
-                    val volume = length.toDouble() * width.toDouble() * height.toDouble()
-                    tvResult.text = volume.toString()
-                }
+                startActivity(intent)
             }
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i(TAG, "onStart: ")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.i(TAG, "onResume: ")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.i(TAG, "onPause: ")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i(TAG, "onStop: ")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.i(TAG, "onRestart: ")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i(TAG, "onDestroy: ")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
+    private fun setMoveActivityWithObject(){
         binding.apply {
-            outState.putString(TAG, tvResult.text.toString())
-        }
+            btnMoveToActivityWithObject.setOnClickListener {
+                val  person = Person(
+                    "PindahactivityObject",
+                    "Zharfan" ,
+                    10,
+                    "zharfan@gmail.com",
+                    "Jambi"
+                )
+                val intent = Intent(this@MainActivity,MoveWithObjectActivity::class.java).apply {
+                    putExtra(MoveWithObjectActivity.EXTRA_PERSON, person)
 
-        Log.e(TAG, "onSaveInstanceState: ")
+                }
+                startActivity(intent)
+            }
+        }
     }
+
 }
