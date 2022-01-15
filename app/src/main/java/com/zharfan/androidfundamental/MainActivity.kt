@@ -1,6 +1,7 @@
 package com.zharfan.androidfundamental
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zharfan.androidfundamental.data.Person
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setExplicitIntent()
         setMoveActivityWithData()
         setMoveActivityWithObject()
+        setDialANumber()
 
     }
 
@@ -62,6 +64,15 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 startActivity(intent)
+            }
+        }
+    }
+
+    private fun setDialANumber(){
+        binding.apply {
+            btnDialNumber.setOnClickListener {
+                val  phoneNumber = "082185647869"
+                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber")))
             }
         }
     }

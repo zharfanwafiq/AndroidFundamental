@@ -46,7 +46,7 @@
 
 
         <Button
-            android:id="@+id/DialNumber"
+            android:id="@+id/btnDialNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -63,7 +63,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginHorizontal="8dp"
             android:text="@string/actionMoveActivityForResult"
-            app:layout_constraintTop_toBottomOf="@id/DialNumber"
+            app:layout_constraintTop_toBottomOf="@id/btnDialNumber"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
