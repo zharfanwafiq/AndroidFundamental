@@ -9,8 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidFundamental">
+
         <activity
             android:name=".VolumeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".intent.MoveActivityWithData"
+            android:exported="true" />
+        <activity
+            android:name=".intent.MoveWithObjectActivity"
+            android:exported="true" />
+        <activity
+            android:name=".intent.MoveActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
