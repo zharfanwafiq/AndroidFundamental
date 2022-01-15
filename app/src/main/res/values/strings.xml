@@ -9,6 +9,10 @@
     <!--intent-->
     <string name="actionMoveToActivity">Pindah</string>
     <string name="actionMoveToActivityWithData">Pindah Dengan data</string>
+    <string name="actionMoveToActivityWithObject">Pindah Dengan Object</string>
     <string name="actionDialNumber">Dial Number</string>
+    <string name="actionMoveActivityForResult">Pindah Activity Untuk Result</string>
     <string name="moveText">Telah Pindah</string>
+    <string name="tvResultFromActivity">Hasil dari Activity</string>
+    <string name="tvObjectReceived">Object Diterima</string>
 </resources>
