@@ -31,7 +31,8 @@ class DebugActivity : AppCompatActivity(), View.OnClickListener {
     private fun setData() {
         names.add("Zharfan")
         names.add("Wafiq")
-        names.add(("ganteng"))
+        names.add("ganteng")
+        names.add("sekali")
     }
 
     private fun setInitView() {
