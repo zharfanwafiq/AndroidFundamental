@@ -14,5 +14,17 @@
     <string name="actionMoveActivityForResult">Pindah Activity Untuk Result</string>
     <string name="moveText">Telah Pindah</string>
     <string name="tvResultFromActivity">Hasil dari Activity</string>
+
+
+<!--    move for result-->
+    <string name="_50">50</string>
+    <string name="_100">100</string>
+    <string name="_150">150</string>
+    <string name="_200">200</string>
+    <string name="tvChoose">Pilih</string>
+    <string name="tvChooseNumber">Pilih Angka yang kamu suka</string>
+    <string name="tvDataReceived">Data Di Terima</string>
     <string name="tvObjectReceived">Object Diterima</string>
+    <string name="tvThisIsMoveActivity">Ini MoveActivity</string>
+
 </resources>

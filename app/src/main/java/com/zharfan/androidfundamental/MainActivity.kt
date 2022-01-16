@@ -4,16 +4,21 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import com.zharfan.androidfundamental.data.Person
 import com.zharfan.androidfundamental.databinding.ActivityMainBinding
 
 import com.zharfan.androidfundamental.intent.MoveActivity
 import com.zharfan.androidfundamental.intent.MoveActivityWithData
+import com.zharfan.androidfundamental.intent.MoveForResultActivity
 import com.zharfan.androidfundamental.intent.MoveWithObjectActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +29,10 @@ class MainActivity : AppCompatActivity() {
         setMoveActivityWithData()
         setMoveActivityWithObject()
         setDialANumber()
+        setMoveActivityForResult()
 
     }
+
 
 
 
@@ -73,6 +80,29 @@ class MainActivity : AppCompatActivity() {
             btnDialNumber.setOnClickListener {
                 val  phoneNumber = "082185647869"
                 startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber")))
+            }
+        }
+    }
+
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){result ->
+        if (result.resultCode == MoveForResultActivity.RESULT_CODE && result.data != null){
+            val selectedValue = result.data?.getIntExtra(MoveForResultActivity.EXTRA_SELECTED_VALUE,0)
+            val text = "Hasil $selectedValue"
+
+            binding.apply {
+                tvResult.text = text
+            }
+        }
+    }
+
+
+    private fun setMoveActivityForResult(){
+        binding.apply {
+            btnMoveToActivityForResult.setOnClickListener {
+                val moveForResultIntent = Intent(this@MainActivity, MoveForResultActivity ::class.java)
+                resultLauncher.launch(moveForResultIntent)
             }
         }
     }
