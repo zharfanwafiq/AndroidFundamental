@@ -26,5 +26,8 @@
     <string name="tvDataReceived">Data Di Terima</string>
     <string name="tvObjectReceived">Object Diterima</string>
     <string name="tvThisIsMoveActivity">Ini MoveActivity</string>
+    <string name="tvHelloWorld">Hello World!!</string>
+    <string name="tvMove">Pindah</string>
+    <string name="tvSetValue">Set Nilai</string>
 
 </resources>
