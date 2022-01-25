@@ -16,7 +16,7 @@
     <string name="tvResultFromActivity">Hasil dari Activity</string>
 
 
-<!--    move for result-->
+    <!--    move for result-->
     <string name="_50">50</string>
     <string name="_100">100</string>
     <string name="_150">150</string>
@@ -30,4 +30,20 @@
     <string name="tvMove">Pindah</string>
     <string name="tvSetValue">Set Nilai</string>
 
+    <!--    fragment-->
+    <string name="tvThisProfile">Ini activity Profile</string>
+    <string name="tvThisCategory">Ini fragment Category</string>
+    <string name="tvCategoryLifestyle">Ke fragment Lifestyle</string>
+    <string name="tvCategoryName">Category Name</string>
+    <string name="tvCategoryDescription">Category Description</string>
+    <string name="tvToProfile">Ke Halaman Profile Activity</string>
+    <string name="tvShowDialog">Tampilkan sebuah dialog</string>
+    <string name="helloHomeFragment">Hello Ini Home Fragment</string>
+    <string name="tvToCategory">Ke fragment Category</string>
+    <string name="tvQuestionCoach">Siapa pelatih tersukses Machester United?</string>
+    <string name="tvSirAlexFerguson">Sir Alex Ferguson</string>
+    <string name="tvJoseMourinho">Jose Mourinho</string>
+    <string name="tvLouisVanGaal">Louis Van Gaal</string>
+    <string name="tvDavidMoyes">David Moyes</string>
+    <string name="tvClose">Tutup</string>
 </resources>
