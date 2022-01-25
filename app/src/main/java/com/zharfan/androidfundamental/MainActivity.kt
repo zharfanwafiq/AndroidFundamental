@@ -23,15 +23,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setActionButton()
+
     }
 
-    private fun setActionButton() {
-        binding.apply {
-            btnIntent.setOnClickListener {
-                startActivity(Intent(this@MainActivity, DebugActivity ::class.java))
-            }
-        }
-    }
 
 }
