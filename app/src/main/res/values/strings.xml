@@ -46,4 +46,6 @@
     <string name="tvLouisVanGaal">Louis Van Gaal</string>
     <string name="tvDavidMoyes">David Moyes</string>
     <string name="tvClose">Tutup</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
