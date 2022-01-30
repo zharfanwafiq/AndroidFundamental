@@ -1,20 +1,11 @@
-package com.zharfan.androidfundamental
+package com.zharfan.androidfundamental.activity
 
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.contract.ActivityResultContracts
-import com.zharfan.androidfundamental.data.Person
+import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.databinding.ActivityMainBinding
-import com.zharfan.androidfundamental.debug.DebugActivity
 import com.zharfan.androidfundamental.fragment.HomeFragment
-
-import com.zharfan.androidfundamental.intent.MoveActivity
-import com.zharfan.androidfundamental.intent.MoveActivityWithData
-import com.zharfan.androidfundamental.intent.MoveForResultActivity
-import com.zharfan.androidfundamental.intent.MoveWithObjectActivity
 
 class MainActivity : AppCompatActivity() {
 

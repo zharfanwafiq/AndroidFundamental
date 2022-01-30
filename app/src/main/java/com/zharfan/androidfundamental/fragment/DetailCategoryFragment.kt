@@ -1,11 +1,13 @@
 package com.zharfan.androidfundamental.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.zharfan.androidfundamental.R
+import android.widget.Toast
+import com.zharfan.androidfundamental.activity.ProfileActivity
 import com.zharfan.androidfundamental.databinding.FragmentDetailCategoryBinding
 
 
@@ -49,6 +51,22 @@ class DetailCategoryFragment : Fragment() {
                 tvCategoryDescription.text = description
 
             }
+
+            btnProfile.setOnClickListener{
+                startActivity(Intent(requireActivity(),ProfileActivity::class.java))
+            }
+
+            btnShowDialog.setOnClickListener {
+                val mOptionDialogFragment = OptionDialogFragment()
+                val mFragmentManager = childFragmentManager
+                mOptionDialogFragment.show(mFragmentManager, OptionDialogFragment::class.java.simpleName)
+            }
+        }
+    }
+
+    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener = object : OptionDialogFragment.OnOptionDialogListener {
+        override fun onOptionChosen(text: String?) {
+            Toast.makeText(requireActivity(),text, Toast.LENGTH_SHORT).show()
         }
     }
 

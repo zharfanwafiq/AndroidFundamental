@@ -1,9 +1,8 @@
-package com.zharfan.androidfundamental
+package com.zharfan.androidfundamental.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.zharfan.androidfundamental.databinding.ActivityMainBinding
 import com.zharfan.androidfundamental.databinding.ActivityVolumeBinding
 
 class VolumeActivity : AppCompatActivity() {
