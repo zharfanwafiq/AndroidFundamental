@@ -11,5 +11,7 @@ class ViewViewGroupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityViewViewGroupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.title = "Google Pixel"
     }
 }
