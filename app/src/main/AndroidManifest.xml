@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidFundamental">
         <activity
+            android:name=".activity.ViewViewGroupActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
         <activity
@@ -31,7 +34,7 @@
             android:name=".intent.MoveActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.ViewViewGroupActivity"
+            android:name=".activity.ConstraintLayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
