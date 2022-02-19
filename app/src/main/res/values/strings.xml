@@ -76,4 +76,7 @@
     <string name="buy">Beli</string>
     <string name="dummyValue">$735</string>
     <string name="dummyPhotos">6 photos</string>
+
+    <string name="actionLinearLayout">Linear Layout</string>
+    <string name="actionGridLayout">Grid Layout</string>
 </resources>
