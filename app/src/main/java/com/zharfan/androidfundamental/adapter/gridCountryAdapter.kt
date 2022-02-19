@@ -7,14 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.zharfan.androidfundamental.data.Country
+import com.zharfan.androidfundamental.databinding.ItemGridCountriesBinding
 import com.zharfan.androidfundamental.databinding.ItemListCountriesBinding
 
-class ListCountryAdapter(private val listCountry: ArrayList<Country>):
-    RecyclerView.Adapter<ListCountryAdapter.MyViewHolder>() {
+class GridCountryAdapter(private val listCountry: ArrayList<Country>):
+    RecyclerView.Adapter<GridCountryAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            ItemListCountriesBinding.inflate(LayoutInflater.from(parent.context),parent,
+            ItemGridCountriesBinding.inflate(LayoutInflater.from(parent.context),parent,
             false)
         )
     }
@@ -25,7 +26,7 @@ class ListCountryAdapter(private val listCountry: ArrayList<Country>):
 
     override fun getItemCount(): Int =listCountry.size
 
-    inner class MyViewHolder(private val binding: ItemListCountriesBinding):
+    inner class MyViewHolder(private val binding: ItemGridCountriesBinding):
         RecyclerView.ViewHolder(binding.root){
 
         fun bind(country: Country){
@@ -37,8 +38,8 @@ class ListCountryAdapter(private val listCountry: ArrayList<Country>):
                 tvCountryNames.text = country.countryName
                 tvCountryDescription.text = country.countryDescription
 
-                listCountries.setOnClickListener{
-                    Toast.makeText(itemView.context,country.countryName,Toast.LENGTH_SHORT).show()
+                gridCountries.setOnClickListener{
+                    Toast.makeText(itemView.context, country.countryName, Toast.LENGTH_SHORT).show()
                 }
             }
         }
