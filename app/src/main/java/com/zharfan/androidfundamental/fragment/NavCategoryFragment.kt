@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.databinding.FragmentNavCategoryBinding
 
 
