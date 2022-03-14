@@ -21,7 +21,11 @@
         android:id="@+id/profileActivity"
         android:name="com.zharfan.androidfundamental.activity.ProfileActivity"
         android:label="activity_profile"
-        tools:layout="@layout/activity_profile" />
+        tools:layout="@layout/activity_profile">
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.dicoding.com/profile" />
+    </activity>
     <fragment
         android:id="@+id/navCategoryFragment"
         android:name="com.zharfan.androidfundamental.fragment.NavCategoryFragment"
@@ -35,14 +39,17 @@
         android:id="@+id/navDetailCategoryFragment"
         android:name="com.zharfan.androidfundamental.fragment.NavDetailCategoryFragment"
         android:label="fragment_nav_detail_category"
-        tools:layout="@layout/fragment_nav_detail_category" >
+        tools:layout="@layout/fragment_nav_detail_category">
         <argument
             android:name="name"
-            app:argType="string"
-            android:defaultValue="default_name" />
+            android:defaultValue="default_name"
+            app:argType="string" />
         <argument
             android:name="stock"
-            app:argType="long"
-            android:defaultValue="0L" />
+            android:defaultValue="0L"
+            app:argType="long" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="https://www.dicoding.com/detail/{name}" />
     </fragment>
 </navigation>
