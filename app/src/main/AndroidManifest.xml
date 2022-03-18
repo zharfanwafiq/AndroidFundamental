@@ -1,62 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zharfan.androidfundamental">
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.zharfan.androidfundamental">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.INTERNET" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidFundamental">
-        <activity
-            android:name=".activity.CustomButtonEditTextActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.StyleThemeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.ConstraintLayoutActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.ViewViewGroupActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".debug.DebugActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.VolumeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".intent.MoveActivityWithData"
-            android:exported="true" />
-        <activity
-            android:name=".intent.MoveWithObjectActivity"
-            android:exported="true" />
-        <activity
-            android:name=".intent.MoveActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.RecyclerViewActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.MainNavHostActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.AndroidFundamental">
+    <activity
+        android:name="com.zharfan.androidfundamental.activity.MenuActivity"
+        android:exported="false"
+        />
+    <activity
+        android:name=".activity.MainNavHostActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.CustomButtonEditTextActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.StyleThemeActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.ConstraintLayoutActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.ViewViewGroupActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.MainActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.ProfileActivity"
+        android:exported="true" />
+    <activity
+        android:name=".debug.DebugActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.VolumeActivity"
+        android:exported="true" />
+    <activity
+        android:name=".intent.MoveActivityWithData"
+        android:exported="true" />
+    <activity
+        android:name=".intent.MoveWithObjectActivity"
+        android:exported="true" />
+    <activity
+        android:name=".intent.MoveActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.RecyclerViewActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.OptionMenuActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <nav-graph android:value="@navigation/main_navigation"/>
-        </activity>
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <nav-graph android:value="@navigation/main_navigation" />
+    </activity>
+</application>
+
 
 </manifest>
