@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.databinding.ActivityMainBinding
-import com.zharfan.androidfundamental.fragment.HomeFragment
+import com.zharfan.androidfundamental.fragment.Home1Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,14 +26,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun showHomeFragment() {
         val mFragmentManager = supportFragmentManager
-        val mHomeFragment = HomeFragment()
-        val fragment = mFragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+        val mHomeFragment = Home1Fragment()
+        val fragment = mFragmentManager.findFragmentByTag(Home1Fragment::class.java.simpleName)
 
 
-        if (fragment !is  HomeFragment){
-            Log.i(TAG, "Fragment name ${HomeFragment::class.java.simpleName}")
+        if (fragment !is  Home1Fragment){
+            Log.i(TAG, "Fragment name ${Home1Fragment::class.java.simpleName}")
             mFragmentManager.beginTransaction()
-                .add(R.id.frameContainer,mHomeFragment,HomeFragment::class.java.simpleName)
+                .add(R.id.frameContainer,mHomeFragment,Home1Fragment::class.java.simpleName)
                 .commit()
         }
     }
