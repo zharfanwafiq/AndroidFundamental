@@ -11,6 +11,9 @@ package="com.zharfan.androidfundamental">
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidFundamental.WithActionBAr">
     <activity
+        android:name=".activity.NavigationDrawerActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.SubwayActivity"
         android:exported="true" />
     <activity
@@ -59,7 +62,8 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.RecyclerViewActivity"
         android:exported="true" />
     <activity
-        android:name=".activity.NavigationDrawerActivity"
+        android:name=".activity.BottomNavigationViewActivity"
+        android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -72,3 +76,4 @@ package="com.zharfan.androidfundamental">
 
 
 </manifest>
+

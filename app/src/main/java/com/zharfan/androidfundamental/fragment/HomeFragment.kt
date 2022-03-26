@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.zharfan.androidfundamental.R
-import com.zharfan.androidfundamental.databinding.FragmentHome1Binding
+import com.zharfan.androidfundamental.databinding.FragmentHomeBinding
 
 
-class Home1Fragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHome1Binding
+    private lateinit var binding: FragmentHomeBinding
 
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class Home1Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentHome1Binding.inflate(inflater, container, false )
+        binding = FragmentHomeBinding.inflate(inflater, container, false )
         return (binding.root)
     }
 
