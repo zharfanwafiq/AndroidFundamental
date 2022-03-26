@@ -1,6 +1,7 @@
 package com.zharfan.androidfundamental.activity
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -39,7 +40,10 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
             appBarNavigationDrawer.fab.setOnClickListener { view ->
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                    .setAction("Action") {
+                        Toast.makeText(this@NavigationDrawerActivity, "HAllo", Toast.LENGTH_SHORT).show()
+                    }
+                    .show()
             }
             val drawerLayout: DrawerLayout = drawerLayout
             val navView: NavigationView = navView
