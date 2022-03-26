@@ -11,8 +11,11 @@ package="com.zharfan.androidfundamental">
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidFundamental.WithActionBAr">
     <activity
+        android:name=".activity.SubwayActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.OptionMenuActivity"
-        android:exported="true"/>
+        android:exported="true" />
     <activity
         android:name="com.zharfan.androidfundamental.activity.MenuActivity"
         android:exported="false" />
