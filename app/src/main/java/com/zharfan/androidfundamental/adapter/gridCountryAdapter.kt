@@ -25,7 +25,9 @@ class GridCountryAdapter(private val listCountry: ArrayList<Country>):
         holder.bind(listCountry[position])
     }
 
-    override fun getItemCount(): Int =listCountry.size
+    override fun getItemCount(): Int{
+        return listCountry.size
+    }
 
     inner class MyViewHolder(private val binding: ItemGridCountriesBinding):
         RecyclerView.ViewHolder(binding.root){
