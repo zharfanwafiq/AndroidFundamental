@@ -22,8 +22,25 @@ class HomeTabLayoutFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setData()
+    }
+
+    private fun setData() {
+        binding.apply {
+            val index = arguments?.getInt(ARG_SECTION_NUMBER,0)
+            tvHomeFragment.text = getString(R.string.content_tab_text,index)
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object{
+        const val ARG_SECTION_NUMBER = "com.zharfan.androidfundamental.fragment.ARG_SECTION_NUMBER"
     }
 }
