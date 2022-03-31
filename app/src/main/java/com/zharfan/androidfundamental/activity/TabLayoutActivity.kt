@@ -23,6 +23,7 @@ class TabLayoutActivity : AppCompatActivity() {
     private fun setData() {
         binding.apply {
             val sectionPagerAdapter = SectionPagerAdapter(this@TabLayoutActivity)
+            sectionPagerAdapter.appName = resources.getString(R.string.app_name)
             viewPager.adapter = sectionPagerAdapter
             TabLayoutMediator(tabLayout,viewPager){tabs,position ->
                 tabs.text = resources.getString(tabTitles[position])

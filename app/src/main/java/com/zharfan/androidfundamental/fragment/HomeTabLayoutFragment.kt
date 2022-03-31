@@ -31,7 +31,9 @@ class HomeTabLayoutFragment : Fragment() {
     private fun setData() {
         binding.apply {
             val index = arguments?.getInt(ARG_SECTION_NUMBER,0)
+            val name = arguments?.getString(ARG_NAME)
             tvHomeFragment.text = getString(R.string.content_tab_text,index)
+            tvAppName.text = name
         }
     }
 
@@ -42,5 +44,6 @@ class HomeTabLayoutFragment : Fragment() {
 
     companion object{
         const val ARG_SECTION_NUMBER = "com.zharfan.androidfundamental.fragment.ARG_SECTION_NUMBER"
+        const val ARG_NAME = "com.zharfan.androidfundamental.fragment.ARG_NAME"
     }
 }
