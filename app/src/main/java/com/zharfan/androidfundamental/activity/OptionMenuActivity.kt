@@ -24,11 +24,11 @@ class OptionMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.option_menu,menu)
 
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as  SearchManager
-        val searchView = menu?.findItem(R.id.action_search)?.actionView as SearchView
+        val searchView = menu.findItem(R.id.action_search)?.actionView as SearchView
 
         searchView.apply {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
@@ -47,7 +47,6 @@ class OptionMenuActivity : AppCompatActivity() {
             })
         }
         return true
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

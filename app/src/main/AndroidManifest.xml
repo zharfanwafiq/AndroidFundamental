@@ -11,6 +11,9 @@ package="com.zharfan.androidfundamental">
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidFundamental.WithActionBAr">
     <activity
+        android:name=".activity.RetrofitActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.LoopJActivity"
         android:exported="true" />
     <activity
@@ -80,7 +83,7 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.RecyclerViewActivity"
         android:exported="true" />
     <activity
-        android:name=".activity.RetrofitActivity"
+        android:name=".activity.ViewModelActivity"
         android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
@@ -94,7 +97,5 @@ package="com.zharfan.androidfundamental">
 
 
 </manifest>
-
-
 
 

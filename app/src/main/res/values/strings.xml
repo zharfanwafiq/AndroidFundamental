@@ -151,10 +151,17 @@
     <string name="error403">Forbidden</string>
     <string name="error404">Not Found</string>
     <string name="error500">Server Error</string>
-<!--    retrofit-->
+    <!--    retrofit-->
     <string name="title">Judul</string>
     <string name="description">Description</string>
     <string name="review">Review</string>
     <string name="write_your_review_here">Write your review here..</string>
     <string name="send">Kirim</string>
+
+    <!--    viewmodel-->
+    <string name="width">Lebar</string>
+    <string name="result">Hasil</string>
+    <string name="calculate">Hitung</string>
+    <string name="height">Tinggi</string>
+    <string name="length">Panjang</string>
 </resources>
