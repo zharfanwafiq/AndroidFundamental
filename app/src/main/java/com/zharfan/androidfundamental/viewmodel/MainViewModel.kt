@@ -1,6 +1,8 @@
 package com.zharfan.androidfundamental.viewmodel
 
+import android.os.SystemClock
 import androidx.lifecycle.ViewModel
+import java.util.*
 
 class MainViewModel :ViewModel() {
     var result = 0.0
@@ -8,4 +10,5 @@ class MainViewModel :ViewModel() {
     fun calculate(width: String, length: String, height: String){
         result = width.toDouble() * length.toDouble() * height.toDouble()
     }
+
 }
