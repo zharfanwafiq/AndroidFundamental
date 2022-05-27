@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -16,6 +17,7 @@ import com.zharfan.androidfundamental.data.response.PostReviewResponse
 import com.zharfan.androidfundamental.data.response.Restaurant
 import com.zharfan.androidfundamental.data.response.RestaurantResponse
 import com.zharfan.androidfundamental.databinding.ActivityRetrofitBinding
+import com.zharfan.androidfundamental.viewmodel.LiveDataApiViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,15 +27,31 @@ class RetrofitActivity : AppCompatActivity() {
     private lateinit var reviewAdapter: ReviewAdapter
     private val client = ApiConfig.getApiService()
 
+    private val viewModel:LiveDataApiViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRetrofitBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
+        initObserver()
         setRecycleView()
-        findRestaurant()
         setAction()
+    }
+
+    private fun initObserver() {
+        viewModel.restaurant.observe(this){ restaurant ->
+            setRestaurantData(restaurant)
+        }
+
+        viewModel.listReview.observe(this){consumerReviews ->
+            setReviewData(consumerReviews)
+        }
+
+        viewModel.isLoading.observe(this){
+            showLoading(it)
+        }
     }
 
 
@@ -49,33 +67,7 @@ class RetrofitActivity : AppCompatActivity() {
         }
     }
 
-    private fun findRestaurant() {
-        showLoading(true)
-        client.getRestaurant(RESTAURANT_ID)
-            .enqueue(object : Callback<RestaurantResponse> {
-            override fun onResponse(
-                call: Call<RestaurantResponse>,
-                response: Response<RestaurantResponse>
-            ) {
-                showLoading(false)
-                if (response.isSuccessful){
-                    val responseBody = response.body()
-                    if (responseBody != null) {
-                        setRestaurantData(responseBody.restaurant)
-                        setReviewData(responseBody.restaurant.customerReviews)
-                    }
-                }else{
-                    Log.e(TAG,"onResponse: ${response.message()}")
-                }
-            }
 
-            override fun onFailure(call: Call<RestaurantResponse>, t: Throwable) {
-                showLoading(false)
-                Log.d(TAG,"onFailure: ${t.message}")
-            }
-
-        })
-    }
 
     private fun setRestaurantData(restaurant: Restaurant) = with(binding){
         tvTitle.text = restaurant.name
@@ -102,47 +94,20 @@ class RetrofitActivity : AppCompatActivity() {
 
     private fun setAction() = with(binding){
         btnSend.setOnClickListener {
-            postReview(etReview.text.toString())
+            viewModel.postReview(etReview.text.toString())
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(it.windowToken,0)
         }
     }
 
-    private fun postReview(review: String){
-        showLoading(true)
-        client.postReview(RESTAURANT_ID,"Dicoding",review)
-            .enqueue(object :Callback<PostReviewResponse>{
-                override fun onResponse(
-                    call: Call<PostReviewResponse>,
-                    response: Response<PostReviewResponse>
-                ) {
-                    showLoading(false)
-                    val responseBody = response.body()
-                    if (response.isSuccessful && responseBody != null){
-                        setReviewData(responseBody.customerReviews)
-                    }else{
-                        Log.e(TAG,"onResponse = ${response.message()}")
-                    }
-                }
 
-                override fun onFailure(call: Call<PostReviewResponse>, t: Throwable) {
-                    showLoading(false)
-                    Log.e(TAG,"onFailure: ${t.message}")
-                }
-
-            })
-    }
     private fun showLoading(isShow: Boolean)= with(binding){
-        if (isShow){
-            progressBar.visibility = View.VISIBLE
+        progressBar.visibility = if (isShow){
+            View.VISIBLE
         }else{
-            progressBar.visibility = View.GONE
+            View.GONE
         }
     }
 
-    companion object {
-        private val  TAG = RetrofitActivity::class.java.simpleName
-        private const val RESTAURANT_ID = "uewq1zg2zlskfw1e867"
-    }
 
 }
