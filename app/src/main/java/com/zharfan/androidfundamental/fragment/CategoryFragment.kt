@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.commit
 import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.databinding.FragmentCategoryBinding
 
@@ -28,22 +29,23 @@ class CategoryFragment : Fragment() {
         setDetailCategoryFragment()
     }
 
-    private fun setDetailCategoryFragment() {
+    private fun setDetailCategoryFragment() = with(binding) {
+        btnDetailCategory.setOnClickListener{
+            val mDetailCategoryFragment = DetailCategoryFragment()
+            val mBundle =Bundle()
+            mBundle.putString(DetailCategoryFragment.EXTRA_NAME,"LiveStyle")
+            val description = "Kategori ini akan berisi produk-produk lifestyle"
+            mDetailCategoryFragment.arguments = mBundle
+            mDetailCategoryFragment.description = description
 
-        val mDetailCategoryFragment = DetailCategoryFragment()
-        val mBundle =Bundle()
-        mBundle.putString(DetailCategoryFragment.EXTRA_NAME,"LiveStyle")
-        val description = "Kategori ini akan berisi produk-produk lifestyle"
-        mDetailCategoryFragment.arguments = mBundle
-        mDetailCategoryFragment.description = description
-
-        val mFragmentManager = parentFragmentManager
-        mFragmentManager.beginTransaction().apply {
-            replace(R.id.frameContainer,mDetailCategoryFragment,DetailCategoryFragment::class.java.simpleName)
-            addToBackStack(null)
-            commit()
+            val mFragmentManager = parentFragmentManager
+            mFragmentManager.commit {
+                addToBackStack(null)
+                replace(R.id.frameContainer, mDetailCategoryFragment,DetailCategoryFragment::class.java.simpleName)
+            }
         }
+
     }
-
-
 }
+
+

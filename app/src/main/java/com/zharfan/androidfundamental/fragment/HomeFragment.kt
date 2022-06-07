@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.databinding.FragmentHomeBinding
 
@@ -29,19 +30,17 @@ class HomeFragment : Fragment() {
         setActionCategory()
     }
 
-    private fun setActionCategory() {
-        binding.apply {
+    private fun setActionCategory()= with(binding) {
             btnCategory.setOnClickListener {
                 val mCategoryFragment = CategoryFragment()
                 val mFragmentManager = parentFragmentManager
-                mFragmentManager.beginTransaction().apply {
-                    replace(R.id.frameContainer,mCategoryFragment,CategoryFragment::class.java.simpleName)
+                mFragmentManager.commit {
                     addToBackStack(null)
-                    commit()
+                    replace(R.id.frameContainer, mCategoryFragment, CategoryFragment::class.java.simpleName)
                 }
             }
-        }
     }
-
-
 }
+
+
+
