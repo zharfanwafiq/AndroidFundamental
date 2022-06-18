@@ -165,7 +165,13 @@
     <string name="height">Tinggi</string>
     <string name="length">Panjang</string>
 
-<!--    livedata-->
+    <!--    livedata-->
     <string name="tvSeconds">%d seconds elapsed</string>
     <string name="tvHelloDicoding">Hello Dicoding!</string>
+
+<!--    UnitTesting-->
+    <string name="actionCalculateVolume">Hitung Volume</string>
+    <string name="actionCalculateSurfaceArea">Hitung Luas</string>
+    <string name="actionCalculateCircumference">Hitung Keliling</string>
+    <string name="actionSave">Simpan</string>
 </resources>

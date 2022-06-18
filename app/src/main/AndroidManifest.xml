@@ -14,6 +14,9 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.LiveDataActivity"
         android:exported="true" />
     <activity
+        android:name=".activity.MainActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.LoopJActivity"
         android:exported="true" />
     <activity
@@ -86,7 +89,7 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.RecyclerViewActivity"
         android:exported="true" />
     <activity
-        android:name=".activity.MainActivity"
+        android:name=".activity.UnitTestingActivity"
         android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
@@ -100,5 +103,6 @@ package="com.zharfan.androidfundamental">
 
 
 </manifest>
+
 
 
