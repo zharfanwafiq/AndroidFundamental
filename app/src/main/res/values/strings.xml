@@ -169,9 +169,14 @@
     <string name="tvSeconds">%d seconds elapsed</string>
     <string name="tvHelloDicoding">Hello Dicoding!</string>
 
-<!--    UnitTesting-->
+    <!--    UnitTesting-->
     <string name="actionCalculateVolume">Hitung Volume</string>
     <string name="actionCalculateSurfaceArea">Hitung Luas</string>
     <string name="actionCalculateCircumference">Hitung Keliling</string>
     <string name="actionSave">Simpan</string>
+
+<!--    openfilesavefile-->
+    <string name="file_new">File New</string>
+    <string name="file_open">File Open</string>
+    <string name="file_save">File Save</string>
 </resources>
