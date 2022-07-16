@@ -11,7 +11,13 @@ package="com.zharfan.androidfundamental">
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidFundamental.WithActionBAr">
     <activity
+        android:name=".activity.FormUserPreferenceActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.TestingActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.OpenFileSaveFileActivity"
         android:exported="true" />
     <activity
         android:name=".activity.LiveDataActivity"
@@ -92,7 +98,7 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.RecyclerViewActivity"
         android:exported="true" />
     <activity
-        android:name=".activity.OpenFileSaveFileActivity"
+        android:name=".activity.SharedPrefenceActivity"
         android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
@@ -104,7 +110,4 @@ package="com.zharfan.androidfundamental">
     </activity>
 </application>
 
-
 </manifest>
-
-
