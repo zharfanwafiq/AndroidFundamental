@@ -99,6 +99,9 @@ package="com.zharfan.androidfundamental">
         android:exported="true" />
     <activity
         android:name=".activity.SharedPrefenceActivity"
+        android:exported="true" />
+    <activity
+        android:name=".activity.SettingsSharedPreferencesActivity"
         android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
@@ -111,3 +114,5 @@ package="com.zharfan.androidfundamental">
 </application>
 
 </manifest>
+
+
