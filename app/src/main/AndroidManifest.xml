@@ -14,6 +14,9 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.FormUserPreferenceActivity"
         android:exported="true" />
     <activity
+        android:name=".activity.SettingsSharedPreferencesActivity"
+        android:exported="true" />
+    <activity
         android:name=".activity.TestingActivity"
         android:exported="true" />
     <activity
@@ -101,7 +104,7 @@ package="com.zharfan.androidfundamental">
         android:name=".activity.SharedPrefenceActivity"
         android:exported="true" />
     <activity
-        android:name=".activity.SettingsSharedPreferencesActivity"
+        android:name=".activity.DataStoreActivity"
         android:theme="@style/Theme.AndroidFundamental"
         android:exported="true">
         <intent-filter>
@@ -114,5 +117,3 @@ package="com.zharfan.androidfundamental">
 </application>
 
 </manifest>
-
-
