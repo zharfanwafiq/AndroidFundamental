@@ -5,11 +5,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.zharfan.androidfundamental.R
 import com.zharfan.androidfundamental.data.Country
 import com.zharfan.androidfundamental.databinding.ItemGridCountriesBinding
-import com.zharfan.androidfundamental.databinding.ItemListCountriesBinding
 
 class GridCountryAdapter(private val listCountry: ArrayList<Country>):
     RecyclerView.Adapter<GridCountryAdapter.MyViewHolder>() {

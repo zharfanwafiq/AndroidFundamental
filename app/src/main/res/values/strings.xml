@@ -205,6 +205,11 @@
     <string name="key_love">love</string>
     <string name="key_name">name</string>
 
-<!--    data store-->
+    <!--    data store-->
     <string name="dark_mode">Dark Mode</string>
+
+    <!--    learn-sqlite-->
+    <string name="submit">Submit</string>
+    <string name="delete">Hapus</string>
+    <string name="date">Date</string>
 </resources>
