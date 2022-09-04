@@ -35,4 +35,5 @@
         <item name="colorSecondaryVariant">@color/orange_dark</item>
     </style>
 
+    <style name="Theme.Broadcast.SmsReceiver" parent="Theme.MaterialComponents.DayNight.Dialog" />
 </resources>

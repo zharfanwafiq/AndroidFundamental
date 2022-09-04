@@ -18,6 +18,7 @@
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_background_thread.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_bottom_navigation_view.xml" value="0.22" />
+        <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_broadcast_receiver.xml" value="0.22" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_constraint_layout.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_coroutine.xml" value="0.3416666666666667" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_custom_button_edit_text.xml" value="0.22" />
@@ -47,6 +48,7 @@
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_room.xml" value="0.25" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_room_note_add_update.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_shared_prefence.xml" value="0.11200000000000002" />
+        <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_sms_receiver.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_style_theme.xml" value="0.22" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_tab_layout.xml" value="0.3541666666666667" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_testing.xml" value="0.10625" />

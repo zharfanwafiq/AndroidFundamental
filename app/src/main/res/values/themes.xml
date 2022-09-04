@@ -62,25 +62,32 @@
     <style name="TextContent.MatchParent">
         <item name="android:layout_width">match_parent</item>
     </style>
+
     <style name="TextContent.Small">
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
     </style>
+
     <style name="TextContent.Small.White">
         <item name="android:textColor">@android:color/white</item>
     </style>
+
     <style name="TextContent.MatchParent.Subtitle">
         <item name="android:textColor">@color/colorSubtitle</item>
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="TextSpec">
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="TextSpec.Field">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:textColor">@color/colorSubtitle</item>
     </style>
+
     <style name="TextSpec.Value">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -94,11 +101,15 @@
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
     </style>
+
     <style name="Theme.AndroidFundamental.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.AndroidFundamental.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AndroidFundamental.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.AndroidFundamental.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.Broadcast.SmsReceiver" parent="Theme.MaterialComponents.DayNight.Dialog" />
 </resources>
