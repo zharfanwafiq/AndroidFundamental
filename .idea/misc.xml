@@ -14,6 +14,7 @@
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/ic_error.xml" value="0.114" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/ic_image_black.xml" value="0.114" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/ic_loading.xml" value="0.114" />
+        <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/ic_notifications.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/ic_refresh_black.xml" value="0.114" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_background_thread.xml" value="0.1" />
@@ -40,6 +41,7 @@
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_news.xml" value="0.3541666666666667" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_note_add_update.xml" value="0.3541666666666667" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_note_sqlite.xml" value="0.1" />
+        <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_notification_builder.xml" value="0.35052083333333334" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_open_file_save_file.xml" value="0.15009041591320071" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_option_menu.xml" value="0.22407407407407406" />
         <entry key="..\:/Android/Github/AndroidFundamental/app/src/main/res/layout/activity_profile.xml" value="0.18205128205128204" />
