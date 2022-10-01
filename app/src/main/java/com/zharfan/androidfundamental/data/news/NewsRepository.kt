@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.zharfan.androidfundamental.BuildConfig
 import com.zharfan.androidfundamental.data.api.news.ApiService
-
 import com.zharfan.androidfundamental.data.local.entity.NewsEntity
 import com.zharfan.androidfundamental.data.local.room.NewsDao
 import com.zharfan.androidfundamental.data.response.news.NewsResponse
