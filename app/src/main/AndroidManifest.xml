@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -13,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidFundamental.WithActionBAr">
+
         <service
             android:name=".service.DownloadService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <receiver
             android:name=".receiver.SmsReceiver"
             android:enabled="true"
@@ -25,15 +29,21 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
+
         <activity
             android:name=".activity.DetailTaskBackStackActivity"
-            android:theme="@style/Theme.DayNight.AndroidFundamental"
-            android:parentActivityName=".activity.TaskBackStackActivity"
+            android:exported="true"
             android:label="@string/activity_detail"
-            android:exported="true">
+            android:parentActivityName=".activity.TaskBackStackActivity"
+            android:theme="@style/Theme.DayNight.AndroidFundamental">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.TaskBackStackActivity"/>
+                android:value=".activity.TaskBackStackActivity" />
         </activity>
         <activity
             android:name=".activity.NotificationBuilderActivity"
@@ -94,7 +104,7 @@
             android:name=".activity.OptionMenuActivity"
             android:exported="true" />
         <activity
-            android:name="com.zharfan.androidfundamental.activity.MenuActivity"
+            android:name=".activity.MenuActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainNavHostActivity"
@@ -163,18 +173,20 @@
             android:theme="@style/Theme.DayNight.AndroidFundamental" />
         <activity
             android:name=".activity.TaskBackStackActivity"
-            android:launchMode="singleTop"
             android:exported="true"
+            android:theme="@style/Theme.DayNight.AndroidFundamental" />
+        <activity
+            android:name=".activity.OneTimeAlarmManagerActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.DayNight.AndroidFundamental">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-<!--            <nav-graph android:value="@navigation/main_navigation" />-->
+            <!-- <nav-graph android:value="@navigation/main_navigation" /> -->
         </activity>
     </application>
 
 </manifest>
-
-
-
