@@ -2,14 +2,14 @@ package com.zharfan.androidfundamental.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.zharfan.androidfundamental.databinding.ActivityOneTimeAlarmManagerBinding
+import com.zharfan.androidfundamental.databinding.ActivityAlarmManagerBinding
 import com.zharfan.androidfundamental.receiver.AlarmReceiver
 import com.zharfan.androidfundamental.utils.DatePickerFragment
 import com.zharfan.androidfundamental.utils.TimePickerFragment
 import java.text.SimpleDateFormat
 import java.util.*
 
-class OneTimeAlarmManagerActivity : AppCompatActivity(), DatePickerFragment.DialogDateListener,
+class AlarmManagerActivity : AppCompatActivity(), DatePickerFragment.DialogDateListener,
     TimePickerFragment.DialogTimeListener {
 
     companion object {
@@ -19,7 +19,7 @@ class OneTimeAlarmManagerActivity : AppCompatActivity(), DatePickerFragment.Dial
     }
 
     private val binding by lazy {
-        ActivityOneTimeAlarmManagerBinding.inflate(layoutInflater)
+        ActivityAlarmManagerBinding.inflate(layoutInflater)
     }
     private val alarmReceiver by lazy { AlarmReceiver() }
 
@@ -27,10 +27,11 @@ class OneTimeAlarmManagerActivity : AppCompatActivity(), DatePickerFragment.Dial
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        setAction()
+        setOnceTime()
+        setRepeatingTime()
     }
 
-    private fun setAction() = with(binding) {
+    private fun setOnceTime() = with(binding) {
         imgBtnOnceDate.setOnClickListener {
             val datePickerFragment = DatePickerFragment()
             datePickerFragment.show(supportFragmentManager, DATE_PICKER_TAG)
@@ -47,7 +48,7 @@ class OneTimeAlarmManagerActivity : AppCompatActivity(), DatePickerFragment.Dial
             val onceMessage = etAlarmMassage.text.toString()
 
             alarmReceiver.setOneTimeAlarm(
-                this@OneTimeAlarmManagerActivity,
+                this@AlarmManagerActivity,
                 AlarmReceiver.TYPE_ONE_TIME,
                 onceDate,
                 onceTime,
@@ -72,10 +73,31 @@ class OneTimeAlarmManagerActivity : AppCompatActivity(), DatePickerFragment.Dial
 
         val dateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
 
-        when(tag){
-            TIME_PICKER_ONCE_TAG -> binding.tvOnceTime.text= dateFormat.format(calendar.time)
-            TIME_PICKER_REPEAT_TAG -> {}
+        when (tag) {
+            TIME_PICKER_ONCE_TAG -> binding.tvOnceTime.text = dateFormat.format(calendar.time)
+            TIME_PICKER_REPEAT_TAG -> binding.tvRepeatingTime.text = dateFormat.format(calendar.time)
             else -> {}
         }
     }
+
+    private fun setRepeatingTime() = with(binding) {
+        imgBtnRepeatingTime.setOnClickListener {
+            val timePickerFragmentRepeat = TimePickerFragment()
+            timePickerFragmentRepeat.show(supportFragmentManager, TIME_PICKER_REPEAT_TAG)
+        }
+
+        btnSetRepeatingAlarm.setOnClickListener {
+            val repeatTime = tvRepeatingTime.text.toString()
+            val repeatMessage = etRepeatingAlarmMessage.text.toString()
+
+            alarmReceiver.setRepeatingAlarm(
+                this@AlarmManagerActivity,
+                AlarmReceiver.TYPE_REPEATING,
+                repeatTime,
+                repeatMessage
+            )
+        }
+
+    }
+
 }

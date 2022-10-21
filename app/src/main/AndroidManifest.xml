@@ -176,7 +176,7 @@
             android:exported="true"
             android:theme="@style/Theme.DayNight.AndroidFundamental" />
         <activity
-            android:name=".activity.OneTimeAlarmManagerActivity"
+            android:name=".activity.AlarmManagerActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/Theme.DayNight.AndroidFundamental">

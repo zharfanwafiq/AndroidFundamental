@@ -135,6 +135,42 @@ class AlarmReceiver : BroadcastReceiver() {
         }
     }
 
+    fun setRepeatingAlarm(
+        context: Context,
+        type: String,
+        time: String,
+        message: String
+    ) {
+        if (isDateInvalid(time, TIME_FORMAT)) return
+
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(context, AlarmReceiver::class.java)
+        intent.apply {
+            putExtra(EXTRA_MESSAGE, message)
+            putExtra(EXTRA_TYPE, type)
+        }
+
+        val timeArray = time.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val calendar = Calendar.getInstance()
+        calendar.apply {
+            set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]))
+            set(Calendar.MINUTE, Integer.parseInt(timeArray[1]))
+            set(Calendar.SECOND, 0)
+        }
+
+        val pendingIntent =
+            PendingIntent.getBroadcast(context, ID_REPEATING, intent, PendingIntent.FLAG_IMMUTABLE)
+        alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
+
+        showToast(context, "Repeating Alarm set up", "")
+    }
+
+
     private fun showToast(context: Context, title: String, message: String?) {
         Toast.makeText(context, "$title: $message", Toast.LENGTH_SHORT).show()
     }
