@@ -29,6 +29,7 @@ class AlarmManagerActivity : AppCompatActivity(), DatePickerFragment.DialogDateL
 
         setOnceTime()
         setRepeatingTime()
+        cancelRepeatingAlarm()
     }
 
     private fun setOnceTime() = with(binding) {
@@ -75,7 +76,8 @@ class AlarmManagerActivity : AppCompatActivity(), DatePickerFragment.DialogDateL
 
         when (tag) {
             TIME_PICKER_ONCE_TAG -> binding.tvOnceTime.text = dateFormat.format(calendar.time)
-            TIME_PICKER_REPEAT_TAG -> binding.tvRepeatingTime.text = dateFormat.format(calendar.time)
+            TIME_PICKER_REPEAT_TAG -> binding.tvRepeatingTime.text =
+                dateFormat.format(calendar.time)
             else -> {}
         }
     }
@@ -100,4 +102,9 @@ class AlarmManagerActivity : AppCompatActivity(), DatePickerFragment.DialogDateL
 
     }
 
+    private fun cancelRepeatingAlarm() = with(binding) {
+        btnCancelRepeatingAlarm.setOnClickListener {
+            alarmReceiver.cancelAlarm(this@AlarmManagerActivity, AlarmReceiver.TYPE_REPEATING)
+        }
+    }
 }
